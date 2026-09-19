@@ -1,4 +1,4 @@
-# 🔐 Secure Office Network — ACL + SSH + Port Security
+# Secure Office Network — ACL + SSH + Port Security
 
 A hands-on **Cisco Packet Tracer** project that simulates a secure office network using VLAN segmentation, inter-VLAN routing, DHCP, Access Control Lists (ACLs), SSH secure management, and switch port security.
 
@@ -6,7 +6,7 @@ The project also includes **intentional fault injection and troubleshooting** to
 
 ---
 
-## 📌 Project Overview
+## Project Overview
 
 This project demonstrates how a small enterprise office network can be designed, configured, secured, monitored, and troubleshot using Cisco IOS.
 
@@ -53,7 +53,7 @@ These faults are diagnosed and resolved using Cisco IOS verification commands.
 
 ---
 
-# 🏗️ Network Topology
+# Network Topology
 
 ```text
                          ┌──────────────┐
