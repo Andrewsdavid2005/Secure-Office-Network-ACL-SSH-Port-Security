@@ -1,79 +1,81 @@
-# Secure Office Network — ACL + SSH + Port Security
+# Secure Office Network — Cisco Packet Tracer
 
-A hands-on **Cisco Packet Tracer** project that simulates a secure office network using VLAN segmentation, inter-VLAN routing, DHCP, Access Control Lists (ACLs), SSH secure management, and switch port security.
+A hands-on **Cisco Packet Tracer** project that simulates a secure enterprise office network using **VLAN segmentation, Router-on-a-Stick, DHCP, Extended ACLs, SSH, Port Security, and network troubleshooting**.
 
-The project also includes **intentional fault injection and troubleshooting** to simulate real-world network engineering tasks.
+The project also includes controlled fault injection to practice a real-world network engineer's workflow:
+
+> **Detect → Analyze → Identify → Fix → Verify → Document**
 
 ---
 
 ## Project Overview
 
-This project demonstrates how a small enterprise office network can be designed, configured, secured, monitored, and troubleshot using Cisco IOS.
+This project demonstrates the design, configuration, security, and troubleshooting of a small enterprise office network.
 
-The network is divided into separate departments using VLANs:
+The network is divided into three logical departments:
 
 - **VLAN 10 — HR**
 - **VLAN 20 — IT**
 - **VLAN 30 — SERVER**
 
-A Cisco router provides inter-VLAN routing using **Router-on-a-Stick**.
+A Cisco 2911 router provides inter-VLAN communication using **Router-on-a-Stick**.
 
-Security policies are implemented using:
+Network security is implemented using:
 
-- Extended ACLs
-- SSH
-- Port Security
+- Extended ACL
+- SSH secure management
+- Switch Port Security
 - VLAN segmentation
 
-The project also includes controlled network failures such as:
+DHCP is used to automatically assign IP addresses to HR and IT clients.
 
-- Incorrect VLAN assignment
-- Trunk failure
-- ACL misconfiguration
-- DHCP failure
-- SSH configuration failure
-
-These faults are diagnosed and resolved using Cisco IOS verification commands.
+The project also contains intentionally introduced network failures to develop practical troubleshooting skills.
 
 ---
 
-# 🎯 Project Objectives
+# Objectives
 
-- Design a segmented office network
-- Configure VLANs
-- Configure access and trunk ports
-- Configure Router-on-a-Stick
-- Implement inter-VLAN routing
+The main objectives of this project are:
+
+- Design a small enterprise office network
+- Create VLAN-based network segmentation
+- Configure access ports
+- Configure trunking
+- Configure 802.1Q
+- Implement Router-on-a-Stick
+- Configure inter-VLAN routing
 - Configure DHCP
-- Implement traffic filtering using ACLs
-- Configure secure SSH management
-- Configure switch port security
-- Perform network troubleshooting
-- Verify network connectivity and security policies
+- Configure Extended ACLs
+- Secure router management using SSH
+- Configure switch Port Security
+- Test network connectivity
+- Introduce controlled network faults
+- Troubleshoot network failures
+- Verify and document the final configuration
 
 ---
 
 # Network Topology
 
 ```text
-                         ┌──────────────┐
-                         │     R1       │
-                         │ Cisco 2911   │
-                         └──────┬───────┘
-                                │
-                              TRUNK
-                                │
-                         ┌──────┴───────┐
-                         │     SW1      │
-                         │ Cisco 2960   │
-                         └──┬──┬──┬──┬──┘
-                            │  │  │  │
-                    ┌───────┘  │  │  └────────┐
-                    │          │  │           │
-                  PC1         PC2 PC3        PC4
-                   HR          HR  IT          IT
-                 VLAN 10    VLAN 10 VLAN 20  VLAN 20
-                                     
-                                │
-                             SERVER1
-                            VLAN 30
+                         ┌─────────────────┐
+                         │       R1        │
+                         │  Cisco 2911     │
+                         │  Router         │
+                         └────────┬────────┘
+                                  │
+                                TRUNK
+                                  │
+                         ┌────────┴────────┐
+                         │      SW1        │
+                         │  Cisco 2960     │
+                         │     Switch      │
+                         └─┬────┬────┬────┬┘
+                           │    │    │    │
+                         PC1   PC2  PC3  PC4
+                          HR    HR   IT   IT
+                         V10   V10  V20  V20
+                                  │
+                                  │
+                              SERVER1
+                              VLAN 30
